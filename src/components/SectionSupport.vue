@@ -135,7 +135,7 @@ export default {
 
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 @font-face {
   font-family: 'Cera Pro';
   src: local('CeraPro-Medium'), local('CeraPro-Medium'),
@@ -143,6 +143,8 @@ export default {
   font-weight: 500;
 }
 .section{
+  padding-left: 5px;
+  padding-right: 5px;
   &__container{
     max-width: 1300px;
     width: 100%;
@@ -159,15 +161,13 @@ export default {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(1, 1fr);
-    grid-column-gap: 12px;
-    grid-row-gap: 12px;
     gap: 12px 12px;
     margin-top: 49px;
   }
   &__more{
-    margin-top: 49px;
     display: flex;
     justify-content: center;
+    margin-top: 49px;
   }
 }
 @media (max-width: 1024px) {
@@ -178,8 +178,14 @@ export default {
     }
     &__cards{
       grid-template-columns: repeat(3, 1fr);
+      grid-column-gap: 12px;
+      grid-row-gap: 12px;
+
       margin-top: 72px;
       gap: 18px 0px;
+    }
+    &__more{
+      margin-top: 72.29px;
     }
   }
 }
@@ -193,6 +199,9 @@ export default {
     &__cards{
       grid-template-columns: repeat(1, 1fr);
       gap: 24px 0;
+    }
+    &__more{
+      margin-top: 46px;
     }
   }
 }

@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <div class="card__border">
+    <div class="card__border" :class="danger">
       <div class="card__title">{{ support.title }}</div>
 
       <div class="card__content">
@@ -14,7 +14,7 @@
         </div>
         <div class="card__wrapper-special">
           <div class="card__progressbar">
-            <span style="width: 40%"></span>
+            <span class="card__progressbar--fill" :class="dangerFill" style="width: 70%"></span>
           </div>
           <div class="card__time">{{ support.time_fakt}}</div>
         </div>
@@ -27,13 +27,30 @@
 export default {
   name: "CardSupport.vue",
   props: ['support'],
+  computed:{
+    // eslint-disable-next-line vue/return-in-computed-property
+    danger(){
+      if((this.support.inwork_count < 20)) {
+        return 'card__border--danger';
+      }
+    },
+    dangerFill(){
+      if((this.support.inwork_count < 10)) {
+        return 'card__progressbar--fill-danger';
+      }
+      else {
+        return null
+      }
+    }
+  }
+
 }
 </script>
 
 <style scoped lang="scss">
 .card{
-  padding: 20px 20px 0px 13.75px;
-  width: 10.783vw;
+  padding: 20px 24.04px 0px 13.75px;
+  width: 9vw;
   min-height: 103px;
   background: #FFFFFF;
   box-shadow: 0px 3.4364px 13.7456px rgba(130, 150, 180, 0.32);
@@ -44,6 +61,9 @@ export default {
     border-left: 3px solid #39B8BA;
     padding: 7px 20px 10px 7px;
     min-height: 65px;
+    &--danger{
+      border-left: 3px solid #FC6E6A;
+    }
   }
   &__title{
     font-family: 'Cera Pro';
@@ -96,13 +116,16 @@ export default {
     width: 74px;
     position: relative;
     background-color: #EFEFEF;
-    span{
+    &--fill{
       width: 100%;
       border-radius: 16px;
       display: block;
       height: 100%;
       background-color: #39B8BA;
       position: relative;
+    }
+    &--fill-danger{
+      background-color: red;
     }
   }
   &__time{
@@ -124,15 +147,21 @@ export default {
     align-items: center;
     min-height: 152.09px;
     border-radius: 20.3179px;
-    padding: 0px 13px 0px 20px;
+    padding: 0px 13px 0px 20.32px;
     &__title{
       font-size: 23.6502px;
       line-height: 30px;
+    }
+    &__content{
+      margin-top: 10px;
     }
     &__border{
       border-left: 4px solid #39B8BA;
       padding: 7px 20px 0px 7px;
       min-height: 96.79px;
+      &--danger{
+        border-left: 3px solid #FC6E6A;
+      }
     }
     &__inwork{
       font-size: 62.0818px;
@@ -172,6 +201,9 @@ export default {
       border-left: 4.43442px solid #39B8BA;
       padding: 15px 20px 0px 7px;
       min-height: 96.79px;
+      &--danger{
+        border-left: 3px solid #FC6E6A;
+      }
     }
   }
 

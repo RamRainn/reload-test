@@ -5,13 +5,12 @@
         Информация о балансах
       </h5>
       <div class="section__cards">
-        <CardBalance   v-for="(balance, index) in balancess"
-                         :key="balance.id"
-                         :index="index"
-                         :balance="balance">
-          {{ balances.title }} - {{ balances.sum }} {{ balances.sum_plan}}
-        </CardBalance>
-
+            <CardBalance   v-for="(balance, index) in balancess"
+                           :key="balance.id"
+                           :index="index"
+                           :balance="balance">
+              {{ balances.title }} - {{ balances.sum }} {{ balances.sum_plan}}
+            </CardBalance>
       </div>
       <div class="section__more">
         <button-more  @click="loadMore"></button-more>
@@ -46,43 +45,20 @@ export default {
         },
         { title: "Открытие", sum: 100000, sum_plan: 5000,
         },
-        { title: "Открытие", sum: 100000, sum_plan: 5000,
+        {
+          title: "Сбербанк", sum: 10000, sum_plan: null,
         },
-        { title: "Открытие", sum: 100000, sum_plan: 5000,
+        { title: "Росбанк", sum: 2000, sum_plan: 5000,
         },
-        { title: "Открытие", sum: 100000, sum_plan: 5000,
+        { title: "ВТБ", sum: 100000, sum_plan: 5000,
         },
-        { title: "Открытие", sum: 100000, sum_plan: 5000,
+        { title: "Тинькоф", sum: 100000, sum_plan: 5000,
         },
-        { title: "Открытие", sum: 100000, sum_plan: 5000,
+        { title: "Сельхозбанк", sum: 100000, sum_plan: 5000,
         },
         { title: "Открытие", sum: 100000, sum_plan: 5000,
         },
       ],
-      support: [
-        {
-          title: "Сбербанк",
-          progress: 25,
-          burning_count: 3,
-          inwork_count: 58,
-          time_fakt: "02:30"
-        },
-        {
-          title: "Росбанк",
-          progress: 90,
-          burning_count: 7,
-          inwork_count: 8,
-          time_fakt: "07:20"
-        },
-        {
-          title: "ВТБ",
-          progress: 25,
-          burning_count: 33,
-          inwork_count: 58,
-          time_fakt: "04:43"
-        },
-      ],
-
     }
   },
   methods: {
@@ -107,7 +83,10 @@ export default {
   url('@/assets/CeraPro-Medium.woff') format('woff');
   font-weight: 500;
 }
+
 .section{
+  padding-left: 5px;
+  padding-right: 5px;
   &__container{
     max-width: 1300px;
     width: 100%;
@@ -126,7 +105,7 @@ export default {
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
-    gap: 11.55px 12px;
+    gap: 11.55px;
   }
   &__more{
     margin-top: 49px;
@@ -141,15 +120,15 @@ export default {
       border-bottom: none;
       padding-bottom: 0px;
     }
-     &__cards {
-       margin-top: 72px;
-     }
     &__title{
       font-size: 38.3586px;
       line-height: 47px;
     }
     &__cards{
       gap: 18px;
+    }
+    &__more{
+      margin-top:  72.20px;
     }
   }
 }
@@ -165,6 +144,9 @@ export default {
       justify-content: flex-start;
       flex-wrap: wrap;
       gap: 24px 0;
+    }
+    &__more{
+      margin-top: 46px;
     }
   }
 }

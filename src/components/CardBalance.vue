@@ -1,7 +1,7 @@
 <template>
     <div class="card">
       <div class="card__title">{{ balance.title }}</div>
-      <div class="card__price" :class="myClass" >{{ balance.sum }} ₽ <span class="card__price-plan">/{{ balance.sum_plan}}</span></div>
+      <div class="card__price" :class="danger" >{{ numberWithSpaces(balance.sum) }}₽<span class="card__price-plan">/{{ balance.sum_plan}}</span></div>
     </div>
 </template>
 
@@ -13,14 +13,18 @@ export default {
     }
   },
   props: ['balance'],
+  methods: {
+    numberWithSpaces(x) {
+      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    }
+  },
   computed:{
     // eslint-disable-next-line vue/return-in-computed-property
-    myClass(){
-      if(this.balance.sum_plan > this.balance.sum_plan) {
-        return 'text-danger';
+    danger(){
+      if( (this.balance.sum / (this.balance.sum_plan / 100)) < 45) {
+        return 'card__price--text-danger';
       }
-      return 'text-danger';
-    }
+    },
   }
 
 }
@@ -29,15 +33,14 @@ export default {
 <style scoped lang="scss">
 
 .card{
-  align-items: center;
     padding: 24.11px 20px 0px 13.75px;
-    width: 10.783vw;
-    min-height: 103px;
+    width: 13.20%;
+    min-height: 103.09px;
     background: #FFFFFF;
     cursor: pointer;
      box-shadow: 0px 3.4364px 13.7456px rgba(130, 150, 180, 0.32);
      border-radius: 13px;
-  transition: 0.5s;
+    transition: 0.5s;
 
   &__title{
     font-family: 'Cera Pro';
@@ -55,6 +58,9 @@ export default {
     font-size: 26px;
     line-height: 27px;
     color: #39B8BA;
+    &--text-danger{
+      color: #FC6E6A;
+    }
   }
   &__price-plan{
     font-size: 16px;
@@ -67,6 +73,7 @@ export default {
 }
 @media (max-width: 1024px) {
   .card{
+    padding: 35px 10px 0 20.28px;
     width: 28vw;
     min-height: 152.09px;
     border-radius: 20.3179px;
@@ -83,7 +90,7 @@ export default {
 @media (max-width: 360px) {
   .card{
     width: 100%;
-    height: 14vh;
+    min-height: 152px;
   }
 }
 
