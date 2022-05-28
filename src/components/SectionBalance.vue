@@ -85,8 +85,7 @@ export default {
 }
 
 .section{
-  padding-left: 5px;
-  padding-right: 5px;
+  margin-top: 55px;
   &__container{
     max-width: 1300px;
     width: 100%;
@@ -106,6 +105,8 @@ export default {
     justify-content: flex-start;
     flex-wrap: wrap;
     gap: 11.55px;
+    margin-top: 49px;
+
   }
   &__more{
     margin-top: 49px;
@@ -115,10 +116,11 @@ export default {
 }
 @media (max-width: 1024px) {
   .section{
+    margin-top: 65px;
     &__container{
+      padding: 0 35.31px 0 36.31px;
       max-width: 100%;
       border-bottom: none;
-      padding-bottom: 0px;
     }
     &__title{
       font-size: 38.3586px;
@@ -134,12 +136,17 @@ export default {
 }
 @media (max-width: 360px) {
   .section{
+    margin-top: 30px;
+    &__container{
+      padding: 0 16.5px;
+    }
     &__title{
       font-size: 24px;
       line-height: 47px;
       text-align: center;
     }
     &__cards{
+      margin-top: 19px;
       display: flex;
       justify-content: flex-start;
       flex-wrap: wrap;

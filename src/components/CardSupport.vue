@@ -14,7 +14,7 @@
         </div>
         <div class="card__wrapper-special">
           <div class="card__progressbar">
-            <span class="card__progressbar--fill" :class="dangerFill" style="width: 70%"></span>
+            <span class="card__progressbar--fill" :class="dangerFill" style="width: 40%"></span>
           </div>
           <div class="card__time">{{ support.time_fakt}}</div>
         </div>
@@ -26,7 +26,11 @@
 <script>
 export default {
   name: "CardSupport.vue",
-  props: ['support'],
+  props: ['support', 'support.progress'],
+  data() {
+    return {
+    }
+  },
   computed:{
     // eslint-disable-next-line vue/return-in-computed-property
     danger(){
@@ -49,8 +53,8 @@ export default {
 
 <style scoped lang="scss">
 .card{
-  padding: 20px 24.04px 0px 13.75px;
-  width: 9vw;
+  padding: 18px 24.04px 19.18px 13.75px;
+  width: 10.783333333333331vw;
   min-height: 103px;
   background: #FFFFFF;
   box-shadow: 0px 3.4364px 13.7456px rgba(130, 150, 180, 0.32);
@@ -107,13 +111,12 @@ export default {
     }
   }
   &__wrapper-special{
-    padding-left: 10px;
+    padding-left: 16px;
   }
   &__progressbar{
     height: 10.62px;
     border-radius: 16px;
-    width: 100%;
-    width: 74px;
+    width: 3.8671875vw;
     position: relative;
     background-color: #EFEFEF;
     &--fill{
@@ -142,12 +145,12 @@ export default {
 }
 @media (max-width: 1024px) {
   .card{
-    width: 28vw;
+    width: 29.830078124999996vw;
     display: flex;
     align-items: center;
     min-height: 152.09px;
     border-radius: 20.3179px;
-    padding: 0px 13px 0px 20.32px;
+    padding: 27.02px 36.71px 28.58px 20.32px;
     &__title{
       font-size: 23.6502px;
       line-height: 30px;
@@ -179,7 +182,7 @@ export default {
       padding-left: 23.65px;
     }
     &__progressbar{
-      width: 10.645vw;
+      width: 10.71875vw;
       height: 15.69px;
     }
     &__time{
@@ -190,7 +193,7 @@ export default {
 }
 @media (max-width: 360px) {
   .card{
-    width: 90%;
+    width: 100%;
     padding: 8px 20px 0px 20px;
     height: 14vh;
     &__progressbar{

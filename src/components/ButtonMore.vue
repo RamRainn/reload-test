@@ -17,7 +17,7 @@ export default {
   font-size: 18px;
   line-height: 24px;
   font-family: 'Cera Pro';
-  width: 150px;
+  width: 7.904885654885654vw;
   height: 36px;
   border: none;
   cursor: pointer;
@@ -31,7 +31,7 @@ export default {
   .btn{
     font-size: 26px;
     line-height: 35px;
-    width: 221px;
+    width: 21.6025390625vw;
     height: 53px;
     border-radius: 23.6053px;
   }

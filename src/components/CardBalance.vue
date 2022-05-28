@@ -33,15 +33,14 @@ export default {
 <style scoped lang="scss">
 
 .card{
-    padding: 24.11px 20px 0px 13.75px;
-    width: 13.20%;
+    padding: 24.11px 4px 24.11px 13.75px;
+    width: 10.783333333333331vw;
     min-height: 103.09px;
     background: #FFFFFF;
     cursor: pointer;
      box-shadow: 0px 3.4364px 13.7456px rgba(130, 150, 180, 0.32);
      border-radius: 13px;
     transition: 0.5s;
-
   &__title{
     font-family: 'Cera Pro';
     font-style: normal;
@@ -74,7 +73,7 @@ export default {
 @media (max-width: 1024px) {
   .card{
     padding: 35px 10px 0 20.28px;
-    width: 28vw;
+    width: 29.830078124999996vw;
     min-height: 152.09px;
     border-radius: 20.3179px;
     &__title{

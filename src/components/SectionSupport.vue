@@ -135,7 +135,7 @@ export default {
 
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 @font-face {
   font-family: 'Cera Pro';
   src: local('CeraPro-Medium'), local('CeraPro-Medium'),
@@ -143,8 +143,7 @@ export default {
   font-weight: 500;
 }
 .section{
-  padding-left: 5px;
-  padding-right: 5px;
+  margin-top: 50px;
   &__container{
     max-width: 1300px;
     width: 100%;
@@ -176,6 +175,9 @@ export default {
       font-size: 38.3586px;
       line-height: 47px;
     }
+    &__container{
+      padding: 0 35.31px 0 36.31px;
+    }
     &__cards{
       grid-template-columns: repeat(3, 1fr);
       grid-column-gap: 12px;
@@ -191,12 +193,16 @@ export default {
 }
 @media (max-width: 360px) {
   .section{
+    &__container{
+      padding: 0 16.5px;
+    }
     &__title{
       font-size: 24px;
       line-height: 47px;
       text-align: center;
     }
     &__cards{
+      margin-top: 19px;
       grid-template-columns: repeat(1, 1fr);
       gap: 24px 0;
     }
